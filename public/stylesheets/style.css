@@ -1,0 +1,21 @@
+.thumbnail img{
+  max-height: 150px;
+}
+
+#out{
+     height: 400px;
+     width: 100%;
+     margin-left: 10px;
+   }
+
+   .navbar-default {
+    background-color:#d74955;
+    border-color:white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:white;
+}
+.navbar-default .navbar-brand {
+  color:white;
+}

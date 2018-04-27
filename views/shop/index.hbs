@@ -1,0 +1,84 @@
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="alet alert-success {{#if noMsg}}hidden{{/if}}">
+      {{successMsg}}
+    </div>
+</div>
+</div>
+
+{{#each products}}
+<div class="row">
+  {{#each this}}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{this.imageUrl}}" alt="...">
+      <div class="caption">
+        <h3>{{this.title}}</h3>
+        <p>{{this.description}}</p>
+        <div class="clearfix">
+      <div class="pull-left">Fee: {{this.price}} </div>
+            </div>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{this._id}}"><i class="fa fa-search"></i> Quick View</button>
+          <a href="/add_to_shopping/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+<div class="modal fade product_view" id="{{this._id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <h3 class="modal-title">{{this.title}}</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{{this.imageUrl}}" class="img-responsive">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>Product Id: <span>{{this._id}}</span></h4>
+                        <div class="rating">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            (10 reviews)
+                        </div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h3 class="cost"><span >Rs</span> {{this.price}} </h3>
+                        <div class="row">
+                          
+                            <!-- end col -->
+                          
+                            <!-- end col -->
+                          
+                            <!-- end col -->
+                        </div>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                             <a href="/add_to_shopping/{{this._id}}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
+                            {{!-- <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  {{/each}}
+</div>
+{{/each}}
+
+
+

@@ -1,15 +1,23 @@
-{{#each orders }}
-{{#each this.items}}
-<p>{{this.item.title}}</p>
-{{/each}}
-<p>{{this.cart.totalQty}} | {{this.cart.totalPrice}}</p>
-{{/each}}
 
-<h1>user  page</h1>
+{{#if orders}}
+<h1>Your courses</h1>
 <ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+{{#each orders }}
+<li class="list-group-item">
+{{#each this.items}}
+<div class='row'>
+  <div class="col-xs-4">
+<img src="{{this.item.imageUrl}}" class="img-responsive" height="100" width="100"/>
+</div>
+<div class="col-xs-8">
+<p>{{this.item.title}}</p>
+<b>{{this.item.description}}</b>
+</div>
+</div>
+{{/each}}
+</li>
+{{/each}}
+  </ul>
+  {{else}}
+  <h1>You have not enroll any course please enroll to study.</h1>
+{{/if}}

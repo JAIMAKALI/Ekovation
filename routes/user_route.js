@@ -48,7 +48,6 @@ router.post('/signin',passport.authenticate('local.signin',{
 }),function(req,res,next){
   if(req.session.oldUrl){
     var oldUrl=req.session.oldUrl;
-
     req.session.oldUrl=null;
     res.redirect(`/shopping_cart${oldUrl}`);
   }
